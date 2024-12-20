@@ -10,28 +10,104 @@
 <style>
     body {
         margin: 0;
+        background-color: #d0d7d0;
     }
 
-    .sieben-image{
+    .header-image{
         height: 100vh;
         width: 100%;
+        object-fit: cover;
+    }
+
+    .header {
+        position: absolute;
+        top: 40vh;
+        left: 40%;
+        font-size: 30px;
+        color: white;
+    }
+
+    .siebenFarbkontraste {
+        display: flex;
+        align-items: center;
+    }
+    .infosiebenFarbkontraste {
+        font-size: 2vh;
+        padding: 10vh; 
+        text-align: left;
+        width: calc( 40vw);
+        z-index: 10;
+    }
+
+    .sieben-image {
+        position: absolute;
+        right: 40vh;
+        border: 10px solid white;
+        border-radius: 50%;
+        z-index: 10;
+    }
+
+    .farbklex-rechts {
+        height: 70vh;
+        width: 90vh;
+        position: absolute;
+        right: 0px;
+        z-index: 1;
+    }
+    
+    .InfoPsychologieFarben {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right:20vh;
+        z-index: 10;
+    }
+
+    .infopsychologie {
+        font-size: 2vh;
+        text-align: left;
+        width: calc(40vw);
+    }
+
+    .farbklex-links {
+        height:60vh;
+        width: 60vh;
+        position: absolute;
+        z-index: 1;
     }
 </style>
 
 <body>
+    <div class="header">
+        <h1>Farbkontraste</h1>
+    </div>
 
-    <h1>Farbkontraste</h1>
-
+    <img class="header-image" src="/img/header.jpg"> 
+    
     <h2>
         Ziel
     </h2>
-
-    <h2>
-        Sieben Farbkontraste
-    </h2>
-    <img class="header" src"/img/header.jpg"> 
     
-    <img class="sieben-image" src="/Documents/GitHub/onepager/img/siebenfarbkontraste.jpg">
+    <h2> Sieben Farbkontraste </h2>
+
+    <div class="siebenFarbkontraste">
+        <p class="infosiebenFarbkontraste" >Das Bild der sieben Farbkontraste veranschaulicht die verschiedenen Arten, wie Farben miteinander in Beziehung stehen und visuelle Spannungen erzeugen können. Es zeigt, wie unterschiedliche Farbkombinationen — wie komplementäre, warme und kalte Farben oder hell-dunkel Kontraste — genutzt werden, um ästhetische Effekte zu erzielen. Jeder Kontrasttyp hat eine spezifische Wirkung auf die Wahrnehmung des Betrachters und beeinflusst, wie Farben miteinander harmonieren oder sich gegenseitig verstärken. Dieses Konzept wurde von Johannes Itten entwickelt und dient als Grundlage für viele Design- und Kunstprinzipien.</p>
+        <img class="sieben-image" src="/img/siebenfarbkontraste.jpg">
+        <img class="farbklex-rechts" src="/img/test_farbflexrechts.jpg">
+    </div>
+
+    <div class="InfoPsychologieFarben">
+        <h2> Psychologie von Farben </h2>
+        <p class="infopsychologie" >Die Psychologie der Farben untersucht, wie Farben die Emotionen, Wahrnehmungen und das Verhalten von Menschen beeinflussen. Farben haben tief verwurzelte Bedeutungen und können bestimmte Stimmungen hervorrufen. Zum Beispiel:</p>
+        <p class="infopsychologie" >Rot: Wird oft mit Energie, Leidenschaft und Dringlichkeit assoziiert. Es kann die Aufmerksamkeit auf sich ziehen und den Appetit anregen.</p>
+        <p class="infopsychologie" >Blau: Fördert Ruhe, Vertrauen und Professionalität. Es wird oft in Geschäftsumgebungen verwendet.</p>
+        <p class="infopsychologie" >Grün: Symbolisiert Natur, Wachstum und Frische. Es wirkt beruhigend und harmonisierend.</p>
+        <p class="infopsychologie" >Gelb: Steht für Optimismus, Freude und Kreativität, kann aber auch Unruhe hervorrufen, wenn es zu intensiv ist.</p>
+        <p class="infopsychologie" >Schwarz: Wird mit Eleganz, Autorität und Macht verbunden, kann aber auch für Trauer und Geheimnis stehen.</p>
+        <p class="infopsychologie" >Weiß: Verbindet man mit Reinheit, Einfachheit und Klarheit. Es wirkt beruhigend und neutral.</p>
+        <p class="infopsychologie" >Farben werden bewusst in Marketing, Branding und Design eingesetzt, um bestimmte Reaktionen beim Betrachter hervorzurufen und eine gewünschte Atmosphäre zu schaffen.</p>
+    </div>
+    <img class="farbklex-links" src="/img/test_farbflexlinks.jpg">
 </body>
 
 </html>
