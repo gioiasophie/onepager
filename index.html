@@ -27,13 +27,37 @@
         color: white;
     }
 
-    .siebenFarbkontraste {
+    .TextZiel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 10;
+    }
+
+    .infoziel {
+        width: calc(45vw);
+    }
+
+    .rectangle {
+        position: absolute;
+        width: 100vh; 
+        height: 25vh;
+        background-color: #6b8ea5;;
+    }
+
+    .TextsiebenFarbkontraste {
+        display: flex;
+        flex-direction: column;
+        padding: 10vh;
+    }
+
+    .test {
         display: flex;
         align-items: center;
     }
+
     .infosiebenFarbkontraste {
-        font-size: 2vh;
-        padding: 10vh; 
+        font-size: 2vh; 
         text-align: left;
         width: calc( 40vw);
         z-index: 10;
@@ -58,6 +82,8 @@
     .InfoPsychologieFarben {
         display: flex;
         flex-direction: column;
+        justify-content: flex-end;
+        height: 900px;
         position: absolute;
         right:20vh;
         z-index: 10;
@@ -70,8 +96,8 @@
     }
 
     .farbklex-links {
-        height:60vh;
-        width: 60vh;
+        height:80vh;
+        width: 90vh;
         position: absolute;
         z-index: 1;
     }
@@ -84,18 +110,22 @@
 
     <img class="header-image" src="/img/header.jpg"> 
     
-    <h2>
-        Ziel
-    </h2>
-    
-    <h2> Sieben Farbkontraste </h2>
+    <div class="TextZiel">
+        <h2> Ziel </h2>
+        <p class="infoziel" >Das Ziel von Farbkontrasten ist es, visuelle Spannung und Aufmerksamkeit zu erzeugen sowie eine klare Differenzierung zwischen Elementen zu schaffen. Farbkontraste helfen dabei, bestimmte Bereiche hervorzuheben, die Lesbarkeit zu verbessern und emotionale Reaktionen zu wecken. Sie werden genutzt, um Harmonie oder Spannung im Design zu erzeugen, die Wahrnehmung zu steuern und die Benutzererfahrung zu optimieren. Durch den gezielten Einsatz von Farbkontrasten kann ein Design sowohl ästhetisch ansprechend als auch funktional sein.</p>
+    </div>
 
-    <div class="siebenFarbkontraste">
-        <p class="infosiebenFarbkontraste" >Das Bild der sieben Farbkontraste veranschaulicht die verschiedenen Arten, wie Farben miteinander in Beziehung stehen und visuelle Spannungen erzeugen können. Es zeigt, wie unterschiedliche Farbkombinationen — wie komplementäre, warme und kalte Farben oder hell-dunkel Kontraste — genutzt werden, um ästhetische Effekte zu erzielen. Jeder Kontrasttyp hat eine spezifische Wirkung auf die Wahrnehmung des Betrachters und beeinflusst, wie Farben miteinander harmonieren oder sich gegenseitig verstärken. Dieses Konzept wurde von Johannes Itten entwickelt und dient als Grundlage für viele Design- und Kunstprinzipien.</p>
+    <div class="rectangle"></div>
+
+    <div class="test">
+        <div class="TextsiebenFarbkontraste">
+            <h2> Sieben Farbkontraste </h2>
+            <p class="infosiebenFarbkontraste" > Das Bild der sieben Farbkontraste veranschaulicht die verschiedenen Arten, wie Farben miteinander in Beziehung stehen und visuelle Spannungen erzeugen können. Es zeigt, wie unterschiedliche Farbkombinationen — wie komplementäre, warme und kalte Farben oder hell-dunkel Kontraste — genutzt werden, um ästhetische Effekte zu erzielen. Jeder Kontrasttyp hat eine spezifische Wirkung auf die Wahrnehmung des Betrachters und beeinflusst, wie Farben miteinander harmonieren oder sich gegenseitig verstärken. Dieses Konzept wurde von Johannes Itten entwickelt und dient als Grundlage für viele Design- und Kunstprinzipien.</p>
+        </div>    
         <img class="sieben-image" src="/img/siebenfarbkontraste.jpg">
         <img class="farbklex-rechts" src="/img/test_farbflexrechts.jpg">
     </div>
-
+    
     <div class="InfoPsychologieFarben">
         <h2> Psychologie von Farben </h2>
         <p class="infopsychologie" >Die Psychologie der Farben untersucht, wie Farben die Emotionen, Wahrnehmungen und das Verhalten von Menschen beeinflussen. Farben haben tief verwurzelte Bedeutungen und können bestimmte Stimmungen hervorrufen. Zum Beispiel:</p>
