@@ -27,22 +27,36 @@
         color: white;
     }
 
+    .Ziel {
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .rectangle {
+        position: relative;
+        width: 100vh; 
+        height: 25vh;
+        background-color: #6b8ea5;
+    }
+
     .TextZiel {
         display: flex;
         flex-direction: column;
-        align-items: center;
         z-index: 10;
+        margin: auto;
+        position: absolute;
+        color: white;
     }
 
     .infoziel {
         width: calc(45vw);
     }
 
-    .rectangle {
-        position: absolute;
-        width: 100vh; 
-        height: 25vh;
-        background-color: #6b8ea5;;
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
     }
 
     .TextsiebenFarbkontraste {
@@ -54,6 +68,7 @@
     .test {
         display: flex;
         align-items: center;
+        margin-top: 300px;
     }
 
     .infosiebenFarbkontraste {
@@ -83,7 +98,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        height: 900px;
+        height: 500px;
         position: absolute;
         right:20vh;
         z-index: 10;
@@ -101,6 +116,15 @@
         position: absolute;
         z-index: 1;
     }
+
+    .rectangle1 {
+        position: absolute;
+        width: 90%;
+        height: 500px;
+        top: 2600px;
+        right: 0px;
+        background-color: #6b8ea5;
+    }
 </style>
 
 <body>
@@ -110,12 +134,15 @@
 
     <img class="header-image" src="/img/header.jpg"> 
     
-    <div class="TextZiel">
-        <h2> Ziel </h2>
-        <p class="infoziel" >Das Ziel von Farbkontrasten ist es, visuelle Spannung und Aufmerksamkeit zu erzeugen sowie eine klare Differenzierung zwischen Elementen zu schaffen. Farbkontraste helfen dabei, bestimmte Bereiche hervorzuheben, die Lesbarkeit zu verbessern und emotionale Reaktionen zu wecken. Sie werden genutzt, um Harmonie oder Spannung im Design zu erzeugen, die Wahrnehmung zu steuern und die Benutzererfahrung zu optimieren. Durch den gezielten Einsatz von Farbkontrasten kann ein Design sowohl ästhetisch ansprechend als auch funktional sein.</p>
+    <div class="Ziel"></div>
+        <div class="container">
+            <div class="rectangle"></div>
+                <div class="TextZiel">
+                    <h2> Ziel </h2>
+                    <p class="infoziel" >Das Ziel von Farbkontrasten ist es, visuelle Spannung und Aufmerksamkeit zu erzeugen sowie eine klare Differenzierung zwischen Elementen zu schaffen. Farbkontraste helfen dabei, bestimmte Bereiche hervorzuheben, die Lesbarkeit zu verbessern und emotionale Reaktionen zu wecken. Sie werden genutzt, um Harmonie oder Spannung im Design zu erzeugen, die Wahrnehmung zu steuern und die Benutzererfahrung zu optimieren. Durch den gezielten Einsatz von Farbkontrasten kann ein Design sowohl ästhetisch ansprechend als auch funktional sein.</p>
+                </div>
+        </div>
     </div>
-
-    <div class="rectangle"></div>
 
     <div class="test">
         <div class="TextsiebenFarbkontraste">
@@ -129,15 +156,12 @@
     <div class="InfoPsychologieFarben">
         <h2> Psychologie von Farben </h2>
         <p class="infopsychologie" >Die Psychologie der Farben untersucht, wie Farben die Emotionen, Wahrnehmungen und das Verhalten von Menschen beeinflussen. Farben haben tief verwurzelte Bedeutungen und können bestimmte Stimmungen hervorrufen. Zum Beispiel:</p>
-        <p class="infopsychologie" >Rot: Wird oft mit Energie, Leidenschaft und Dringlichkeit assoziiert. Es kann die Aufmerksamkeit auf sich ziehen und den Appetit anregen.</p>
-        <p class="infopsychologie" >Blau: Fördert Ruhe, Vertrauen und Professionalität. Es wird oft in Geschäftsumgebungen verwendet.</p>
-        <p class="infopsychologie" >Grün: Symbolisiert Natur, Wachstum und Frische. Es wirkt beruhigend und harmonisierend.</p>
-        <p class="infopsychologie" >Gelb: Steht für Optimismus, Freude und Kreativität, kann aber auch Unruhe hervorrufen, wenn es zu intensiv ist.</p>
-        <p class="infopsychologie" >Schwarz: Wird mit Eleganz, Autorität und Macht verbunden, kann aber auch für Trauer und Geheimnis stehen.</p>
-        <p class="infopsychologie" >Weiß: Verbindet man mit Reinheit, Einfachheit und Klarheit. Es wirkt beruhigend und neutral.</p>
         <p class="infopsychologie" >Farben werden bewusst in Marketing, Branding und Design eingesetzt, um bestimmte Reaktionen beim Betrachter hervorzurufen und eine gewünschte Atmosphäre zu schaffen.</p>
     </div>
     <img class="farbklex-links" src="/img/test_farbflexlinks.jpg">
+
+    <div class="rectangle1"></div>
+       <h2> Beispiele</h2>
 </body>
 
 </html>
