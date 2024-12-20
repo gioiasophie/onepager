@@ -1,59 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-<meta charset="UTF-8">
-<title>Keys - Input - Interactive Information</title>
-<style>
-    body {
-        margin: 0;
-        height: 100vh;
-        overflow: hidden;        
-        font-family: sans-serif;
-    }
-
-    div {
-        position: absolute;
-        font-size: 10rem;
-        color: black;
-        font-weight: bold;        
-        transition: all 10s ease-out;
-        transform: translate(-50%, -50%);
-    }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farbenpsychologie</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <div class="header-title">
+      <h1>Titel</h1>
+    </div>
+    <p>Ziel</p>
+  </header>
 
-<script>
-document.addEventListener('keydown', (event) => {
-    // which key was pressed
-    const key = event.key; 
+  <main>
+    <section class="definition">
+      <h2>Definition & warum es wichtig ist</h2>
+      <div class="checkered-pattern"></div>
+    </section>
 
-    // skipping shift, control, alt, etc.
-    if (key.length !== 1) return;
+    <section class="color-contrast">
+      <h2>Sieben Farbkontraste</h2>
+      <div class="contrast-example">
+        <p>Bedeutung & Beispiele</p>
+        <div class="color-example"></div>
+      </div>
+    </section>
 
-    // create a new div element to display the key
-    const div = document.createElement('div');
-    div.textContent = key;
+    <section class="psychology">
+      <h2>Psychologie von Farben</h2>
+      <div class="text-and-shape">
+        <div class="shape"></div>
+        <p>Text Feld</p>
+      </div>
+      <div class="image-grid">
+        <div class="image-item">
+          <p>Bild</p>
+          <p>Text</p>
+        </div>
+        <div class="image-item">
+          <p>Bild</p>
+          <p>Text</p>
+        </div>
+        <div class="image-item">
+          <p>Bild</p>
+          <p>Text</p>
+        </div>
+      </div>
+    </section>
 
-    // random position within the viewport
-    const x = Math.random() * window.innerWidth;
-    const y = Math.random() * window.innerHeight;
+    <section class="tips">
+      <h2>Farbkontraste + Web</h2>
+      <div class="tip">
+        <p>1 Tipp</p>
+      </div>
+    </section>
+  </main>
 
-    div.style.left = x+"px";
-    div.style.top = y+"px";
-
-    document.body.appendChild(div);
-
-    // fade-out after adding the element
-    setTimeout(() => { 
-        div.style.opacity = '0';
-        div.style.transform = 'translate(-50%, -50%) scale(0.1)';
-    }, 0);
-
-    // remove div after 5 seconds
-    setTimeout(() => { div.remove(); }, 10000);
-});
-</script>
-
+  <footer>
+    <button class="weiter-btn">Weiter</button>
+  </footer>
 </body>
 </html>
