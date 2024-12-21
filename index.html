@@ -117,14 +117,46 @@
         z-index: 1;
     }
 
-    .rectangle1 {
-        position: absolute;
+    .outer-rectangle {
         width: 90%;
-        height: 500px;
-        top: 2600px;
-        right: 0px;
+        height: auto; /* Passt die Höhe an den Inhalt an */
         background-color: #6b8ea5;
+        margin: 900px auto 0;
+        padding: 20px;
+        box-sizing: border-box; /* Sorgt dafür, dass Padding mit berücksichtigt wird */
+        text-align: center;
     }
+
+    .example-container {
+        display: grid; /* Zeigt alle Beispiele nebeneinander */
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: space-around; /* Abstand zwischen den Beispielen */
+        flex-wrap: wrap; /* Bricht in die nächste Zeile, falls nicht genug Platz ist */
+        gap: 50px; /* Abstand zwischen den Beispielen */
+
+    }
+
+    .example {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 150px;
+    }
+
+    .inner-rectangle {
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        margin-bottom: 10px; /* Abstand zwischen Rechteck und Text */
+        margin-right: 25px;
+    }
+
+    .example h3, 
+    .example h4 {
+        margin: 5px 0;
+        text-align: center;
+    }
+
 </style>
 
 <body>
@@ -160,8 +192,32 @@
     </div>
     <img class="farbklex-links" src="/img/test_farbflexlinks.jpg">
 
-    <div class="rectangle1"></div>
-       <h2> Beispiele</h2>
+    <div class="outer-rectangle">
+        <div class="container">
+            <h2>Beispiele</h2>
+            <div class="example">
+                <div class="inner-rectangle"></div>
+                <div class="text">
+                    <h3>Farbe1</h3>
+                    <h4>Bedeutung der Farbe</h4>
+                </div>
+            </div>
+            <div class="example">
+                <div class="inner-rectangle"></div>
+                <div class="text">
+                    <h3>Farbe2</h3>
+                    <h4>Bedeutung der Farbe</h4>
+                </div>
+            </div>
+            <div class="example">
+                <div class="inner-rectangle"></div>
+                <div class="text">
+                    <h3>Farbe3</h3>
+                    <h4>Bedeutung der Farbe</h4>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
