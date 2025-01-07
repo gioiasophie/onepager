@@ -8,10 +8,91 @@
 </head>
 
 <style>
-    body {
-        margin: 0;
+    body, html {
+        margin: 0; padding: 0;
+        scroll-behavior: smooth;
         background-color: #d0d7d0;
+        font-size: calc(1vh * 1vw);
     }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #333;
+      color: white;
+      padding: 1em 0;
+      z-index: 10;
+    }
+    
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 1em;
+      position: relative;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5em 1em;
+      border-radius: 0.25em;
+    }
+
+    nav ul li a:hover {
+      background: #555;
+    }
+
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.5em);
+      left: 0;
+      background: #333;
+      list-style: none;
+      padding: 0.5em 0;
+      margin: 0;
+      border-radius: 0.25em;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul li:hover ul {
+      display: block;
+    }
+
+    nav ul li ul li {
+      margin: 0;
+    }
+
+    nav ul li ul li a {
+      display: block;
+      white-space: nowrap;
+      padding: 0.5em 1em;
+    }
+
+    nav ul li ul li a:hover {
+      background: #444;
+    }
+
+    h1 { margin: 4em 0; text-align: center; }
+    h3 { padding-top: 3em; }
+
+    section {
+      height: 100vh;
+      padding: 3em;
+      box-sizing: border-box;
+    }
+
+    #a { background: #eee; }
+    #b { background: #ddd; }
+    #c { background: #bbb; }
 
     .header-image{
         height: 100vh;
@@ -21,7 +102,7 @@
 
     .header {
         position: absolute;
-        top: 40vh;
+        top: 20vh;
         left: 40%;
         font-size: 30px;
         color: white;
@@ -42,7 +123,7 @@
     .TextZiel {
         display: flex;
         flex-direction: column;
-        z-index: 10;
+        z-index: 2;
         margin: auto;
         position: absolute;
         color: white;
@@ -75,7 +156,7 @@
         font-size: 2vh; 
         text-align: left;
         width: calc( 40vw);
-        z-index: 10;
+        z-index: 2;
     }
 
     .sieben-image {
@@ -83,15 +164,7 @@
         right: 40vh;
         border: 10px solid white;
         border-radius: 50%;
-        z-index: 10;
-    }
-
-    .farbklex-rechts {
-        height: 70vh;
-        width: 90vh;
-        position: absolute;
-        right: 0px;
-        z-index: 1;
+        z-index: 2;
     }
     
     .InfoPsychologieFarben {
@@ -101,20 +174,13 @@
         height: 500px;
         position: absolute;
         right:20vh;
-        z-index: 10;
+        z-index: 2;
     }
 
     .infopsychologie {
         font-size: 2vh;
         text-align: left;
         width: calc(40vw);
-    }
-
-    .farbklex-links {
-        height:80vh;
-        width: 90vh;
-        position: absolute;
-        z-index: 1;
     }
 
     .outer-rectangle {
@@ -166,6 +232,25 @@
 </style>
 
 <body>
+    
+    <nav>
+        <ul>
+          <li>
+            <a href="#a">Information</a>
+            <ul>
+              <li><a href="#a1">Sieben Farbkontraste</a></li>
+              <li><a href="#a2">Psychologie von Farben</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#b">Beispiele</a>
+          </li>
+          <li>
+            <a href="#c">Section C</a>
+          </li>
+        </ul>
+      </nav>
+    
     <div class="header">
         <h1>Farbkontraste</h1>
     </div>
@@ -182,23 +267,21 @@
         </div>
     </div>
 
-    <div class="test">
-        <div class="TextsiebenFarbkontraste">
+    <div section id="a" class="test">
+        <div section id="a1" class="TextsiebenFarbkontraste">
             <h2> Sieben Farbkontraste </h2>
             <p class="infosiebenFarbkontraste" > Das Bild der sieben Farbkontraste veranschaulicht die verschiedenen Arten, wie Farben miteinander in Beziehung stehen und visuelle Spannungen erzeugen können. Es zeigt, wie unterschiedliche Farbkombinationen — wie komplementäre, warme und kalte Farben oder hell-dunkel Kontraste — genutzt werden, um ästhetische Effekte zu erzielen. Jeder Kontrasttyp hat eine spezifische Wirkung auf die Wahrnehmung des Betrachters und beeinflusst, wie Farben miteinander harmonieren oder sich gegenseitig verstärken. Dieses Konzept wurde von Johannes Itten entwickelt und dient als Grundlage für viele Design- und Kunstprinzipien.</p>
         </div>    
         <img class="sieben-image" src="/img/siebenfarbkontraste.jpg">
-        <img class="farbklex-rechts" src="/img/test_farbflexrechts.jpg">
     </div>
     
-    <div class="InfoPsychologieFarben">
+    <div section id="a2" class="InfoPsychologieFarben">
         <h2> Psychologie von Farben </h2>
         <p class="infopsychologie" >Die Psychologie der Farben untersucht, wie Farben die Emotionen, Wahrnehmungen und das Verhalten von Menschen beeinflussen. Farben haben tief verwurzelte Bedeutungen und können bestimmte Stimmungen hervorrufen. Zum Beispiel:</p>
         <p class="infopsychologie" >Farben werden bewusst in Marketing, Branding und Design eingesetzt, um bestimmte Reaktionen beim Betrachter hervorzurufen und eine gewünschte Atmosphäre zu schaffen.</p>
     </div>
-    <img class="farbklex-links" src="/img/test_farbflexlinks.jpg">
 
-    <div class="outer-rectangle">
+    <div section id="b" class="outer-rectangle">
     <div class="container">
         <h2>Beispiele</h2>
         <div class="box">
