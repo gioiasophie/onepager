@@ -109,8 +109,15 @@
     }
 
     .Ziel {
-        position: flex;
+        position: relative;
         margin: 0 auto;
+    }
+
+    .rectangle {
+        position: relative;
+        width: 100vh; 
+        height: 25vh;
+        background-color: #6b8ea5;
     }
 
     .TextZiel {
@@ -120,13 +127,10 @@
         margin: auto;
         position: absolute;
         color: white;
-        background-color: #6b8ea5;
-        margin: 10vh auto 0;
-        padding: 2vh
     }
 
     .infoziel {
-        width: calc(60vw);
+        width: calc(45vw);
     }
 
     .container {
@@ -139,32 +143,28 @@
     .TextsiebenFarbkontraste {
         display: flex;
         flex-direction: column;
-        padding: 3vh;
-        background-color: #f6f7f7;
-        margin: 30vh auto 0;
+        padding: 10vh;
     }
 
     .test {
         display: flex;
-        justify-content: column;
         align-items: center;
-        z-index: 1;
+        margin-top: 300px;
     }
 
     .infosiebenFarbkontraste {
         font-size: 2vh; 
         text-align: left;
-        width: calc( 55vw);
+        width: calc( 40vw);
         z-index: 2;
     }
 
     .sieben-image {
-        position: flex;
-        right: 10vh;
+        position: absolute;
+        right: 40vh;
         border: 10px solid white;
         border-radius: 50%;
         z-index: 2;
-        margin: 30vh auto 0;
     }
     
     .InfoPsychologieFarben {
@@ -275,13 +275,11 @@
         <img class="sieben-image" src="/img/siebenfarbkontraste.jpg">
     </div>
     
-<div class="containerPsychologie" >
     <div section id="a2" class="InfoPsychologieFarben">
         <h2> Psychologie von Farben </h2>
         <p class="infopsychologie" >Die Psychologie der Farben untersucht, wie Farben die Emotionen, Wahrnehmungen und das Verhalten von Menschen beeinflussen. Farben haben tief verwurzelte Bedeutungen und können bestimmte Stimmungen hervorrufen. Zum Beispiel:</p>
         <p class="infopsychologie" >Farben werden bewusst in Marketing, Branding und Design eingesetzt, um bestimmte Reaktionen beim Betrachter hervorzurufen und eine gewünschte Atmosphäre zu schaffen.</p>
     </div>
-</div>
 
     <div section id="b" class="outer-rectangle">
     <div class="container">
