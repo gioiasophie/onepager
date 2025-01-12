@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll-Effekt</title>
+
+  <style>
+  /* Grundlegendes Styling */
+  
+  nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #333;
+      color: white;
+      padding: 1em 0;
+      z-index: 10;
+    }
+    
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 1em;
+      position: relative;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5em 1em;
+      border-radius: 0.25em;
+    }
+
+    nav ul li a:hover {
+      background: #555;
+    }
+
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      top: calc(100% + 0.5em);
+      left: 0;
+      background: #333;
+      list-style: none;
+      padding: 0.5em 0;
+      margin: 0;
+      border-radius: 0.25em;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul li:hover ul {
+      display: block;
+    }
+
+    nav ul li ul li {
+      margin: 0;
+    }
+
+    nav ul li ul li a {
+      display: block;
+      white-space: nowrap;
+      padding: 0.5em 1em;
+    }
+
+    nav ul li ul li a:hover {
+      background: #444;
+    }
+
+    h1 { margin: 4em 0; text-align: center; }
+    h3 { padding-top: 3em; }
+
+    section {
+      height: 100vh;
+      padding: 3em;
+      box-sizing: border-box;
+    }
+
+    #a { background: #eeeeee00; }
+    #b { background: #dddddd00; }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  .header {
+    position: flex;
+    top: 150px;
+    text-align: center;
+    font-size: 5vh;
+    margin: 3vh auto 0;
+  }
+
+  .Ziel {
+    position: flex;
+    margin: 10vh auto 0;
+    padding: 3vh;
+    flex-direction: column;
+    background-color: #6b8ea5;
+  }
+
+  .container {
+    position: relative;
+    height: 300vh; /* Genügend Höhe für Scrollen */
+    background-color: #f1f1f1;
+  }
+
+  /* Styling für beide Textbereiche */
+  .text {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  /* Styling für den fixierten Text */
+  .fixed-text {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: position 0.3s ease, top 0.3s ease;
+  }
+
+  .sieben-image {
+        position: flex;
+        right: 10vh;
+        border: 10px solid white;
+        border-radius: 50%;
+        z-index: 2;
+        margin: 10vh auto 0;
+    }
+
+  /* Styling für den scrollenden Text */
+  .scroll-text {
+    position: relative;
+    background-color: #fff;
+    z-index: 2;
+    margin-top: 200px; /* Platzhalter, damit der fixierte Text sichtbar bleibt */
+  }
+
+  .outer-rectangle {
+        width: 90%;
+        height: 40vh;
+        background-color: #b3d6ed;
+        margin: 5vh auto 0;
+        padding: 10px;
+        box-sizing: border-box; /* Sorgt dafür, dass Padding mit berücksichtigt wird */
+        text-align: center;
+    }
+  
+  .container1 {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .box {
+        width: 150vh;
+        height: 150vh;
+        background-color: rgba(255, 255, 255, 0);
+        text-align: center;
+    }
+
+    .inner-rectangle1 {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(216, 202, 113);
+    }
+
+    .inner-rectangle2 {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(105, 225, 255);
+    }
+
+    .inner-rectangle3 {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(83, 234, 196);
+    }
+
+    .inner-rectangle4 {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(208, 128, 235);
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li>
+        <a href="#a">Ziel</a>
+      </li>
+      <li>
+        <a href="#b">Information</a>
+        <ul>
+          <li><a href="#b1">Sieben Farbkontraste</a></li>
+          <li><a href="#b2">Psychologie von Farben</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#c">Beispiele</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="header">
+    <h1>Farbkontraste</h1>
+  </div>
+
+  <div section id="a" class="Ziel">
+    <h1>Ziel</h1>
+    <p>Das Ziel von Farbkontrasten ist es, visuelle Spannung und Aufmerksamkeit zu erzeugen sowie eine klare Differenzierung zwischen Elementen zu schaffen. Farbkontraste helfen dabei, bestimmte Bereiche hervorzuheben, die Lesbarkeit zu verbessern und emotionale Reaktionen zu wecken. Sie werden genutzt, um Harmonie oder Spannung im Design zu erzeugen, die Wahrnehmung zu steuern und die Benutzererfahrung zu optimieren. Durch den gezielten Einsatz von Farbkontrasten kann ein Design sowohl ästhetisch ansprechend als auch funktional sein.</p>
+  </div>
+
+  <div section id="b" class="container">
+    <div section id="b1" class="text fixed-text">
+      <h1>Sieben Farbkontraste</h1>
+      <p>Das Bild der sieben Farbkontraste veranschaulicht die verschiedenen Arten, wie Farben miteinander in Beziehung stehen und visuelle Spannungen erzeugen können. Es zeigt, wie unterschiedliche Farbkombinationen — wie komplementäre, warme und kalte Farben oder hell-dunkel Kontraste — genutzt werden, um ästhetische Effekte zu erzielen. Jeder Kontrasttyp hat eine spezifische Wirkung auf die Wahrnehmung des Betrachters und beeinflusst, wie Farben miteinander harmonieren oder sich gegenseitig verstärken. Dieses Konzept wurde von Johannes Itten entwickelt und dient als Grundlage für viele Design- und Kunstprinzipien.</p>
+      <img class="sieben-image" src="/img/siebenfarbkontraste.jpg">
+    </div>
+    <div section id="b2" class="text scroll-text">
+      <h1>Psychologie von Farben</h1>
+      <p>Die Psychologie der Farben untersucht, wie Farben die Emotionen, Wahrnehmungen und das Verhalten von Menschen beeinflussen. Farben haben tief verwurzelte Bedeutungen und können bestimmte Stimmungen hervorrufen. Zum Beispiel:</p>
+      <p>Farben werden bewusst in Marketing, Branding und Design eingesetzt, um bestimmte Reaktionen beim Betrachter hervorzurufen und eine gewünschte Atmosphäre zu schaffen.</p>
+    </div>
+  </div>
+
+  <div section id="c" class="outer-rectangle">
+    <h2>Beispiele</h2>
+    <div class="container1"> 
+        <div class="box">
+            <div class="inner-rectangle1"></div>
+            <div class="text">
+                <h3>Farbe1</h3>
+                <h4>Bedeutung der Farbe</h4>
+            </div>
+        </div>
+        <div class="box">
+            <div class="inner-rectangle2"></div>
+            <div class="text">
+                <h3>Farbe2</h3>
+                <h4>Bedeutung der Farbe</h4>
+            </div>
+        </div>
+        <div class="box">
+            <div class="inner-rectangle3"></div>
+            <div class="text">
+                <h3>Farbe3</h3>
+                <h4>Bedeutung der Farbe</h4>
+            </div>
+        </div>
+        <div class="box">
+            <div class="inner-rectangle4"></div>
+            <div class="text">
+                <h3>Farbe4</h3>
+                <h4>Bedeutung der Farbe</h4>
+            </div>
+        </div>
+    </div>
+    </div>
+
+  <script>
+  document.addEventListener("scroll", () => {
+    const fixedText = document.querySelector(".fixed-text");
+    const scrollText = document.querySelector(".scroll-text");
+
+    // Positionen berechnen
+    const fixedTextBottom = fixedText.getBoundingClientRect().bottom;
+    const scrollTextTop = scrollText.getBoundingClientRect().top;
+
+    // Wenn der scrollende Text den fixierten Text überlappt
+    if (scrollTextTop <= fixedTextBottom) {
+      fixedText.style.position = "relative";
+      fixedText.style.top = `${scrollTextTop - fixedTextBottom}px`;
+    }
+
+    // Sobald der scrollende Text vollständig den fixierten Text überlagert hat
+    if (scrollTextTop > fixedTextBottom + fixedText.offsetHeight) {
+      fixedText.style.position = "static"; // Normaler Fluss, scrollbar
+    }
+
+    // Rückkehr zur Sticky-Position, wenn der scrollende Text nicht mehr überlappt
+    if (scrollTextTop > 0 && scrollTextTop < fixedText.offsetHeight) {
+      fixedText.style.position = "sticky";
+      fixedText.style.top = "0";
+    }
+  });
+  </script>
+</body>
+</html>

@@ -10,7 +10,6 @@
 <style>
     body, html {
         margin: 0; padding: 0;
-        scroll-behavior: smooth;
         background-color: #d0d7d0;
         font-size: calc(1vh * 1vw);
     }
@@ -102,7 +101,7 @@
 
     .header {
         position: absolute;
-        top: 20vh;
+        top: 150px;
         left: 40%;
         font-size: 30px;
         color: white;
@@ -116,13 +115,12 @@
     .TextZiel {
         display: flex;
         flex-direction: column;
-        z-index: 2;
+        z-index: 0;
         margin: auto;
-        position: absolute;
         color: white;
         background-color: #6b8ea5;
-        margin: 30vh auto 0;
-        padding: 2vh
+        margin: 10vh auto 0;
+        padding: 3vh
     }
 
     .infoziel {
@@ -130,21 +128,12 @@
         width: calc(60vw);
     }
 
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
+    .text {
+        width: 90%;
+        padding: 10vh;
+        box-sizing: border-box;
     }
-
-    .TextsiebenFarbkontraste {
-        display: flex;
-        flex-direction: column;
-        padding: 3vh;
-        background-color: #f6f7f7;
-        margin: 60vh auto 0;
-    }
-
+    
     .test {
         display: flex;
         justify-content: column;
@@ -153,11 +142,15 @@
         z-index: 1;
     }
 
-    .infosiebenFarbkontraste {
+    .siebenFarbkontraste {
+        flex-direction: column;
+        padding: 3vh;
+        background-color: #f6f7f7;
+        margin: 20vh auto 0;
         font-size: 2vh; 
         text-align: left;
         width: calc( 55vw);
-        z-index: 2;
+        z-index: 1;
     }
 
     .sieben-image {
@@ -166,20 +159,16 @@
         border: 10px solid white;
         border-radius: 50%;
         z-index: 2;
-        margin: 60vh auto 0;
+        margin: 20vh auto 0;
     }
     
-    .containerPsychologie {
-        padding: 3vh;
-    }
-
-
-    .InfoPsychologieFarben {
+    .PsychologieFarben {
         display: flex;
         flex-direction: column;
+        z-index: 2;
         padding: 3vh;
         background-color: #f6f7f7;
-        margin: 20vh auto 0;
+        margin: 5vh auto 0;
     }
 
     .infopsychologie {
@@ -190,10 +179,10 @@
 
     .outer-rectangle {
         width: 90%;
-        height: 350px;
+        height: 60vh;
         background-color: #6b8ea5;
         margin: 20vh auto 0;
-        padding: 20px;
+        padding: 10px;
         box-sizing: border-box; /* Sorgt dafür, dass Padding mit berücksichtigt wird */
         text-align: center;
     }
@@ -205,8 +194,8 @@
     }
 
     .box {
-        width: 200px;
-        height: 200px;
+        width: 150vh;
+        height: 150vh;
         background-color: rgba(255, 255, 255, 0);
         text-align: center;
     }
@@ -273,24 +262,23 @@
     </div>
 
     <div section id="a" class="test">
-        <div section id="a1" class="siebenFarbkontraste">
+        <div section id="a1" class="text siebenFarbkontraste">
             <h2> Sieben Farbkontraste </h2>
             <p class="infosiebenFarbkontraste" > Das Bild der sieben Farbkontraste veranschaulicht die verschiedenen Arten, wie Farben miteinander in Beziehung stehen und visuelle Spannungen erzeugen können. Es zeigt, wie unterschiedliche Farbkombinationen — wie komplementäre, warme und kalte Farben oder hell-dunkel Kontraste — genutzt werden, um ästhetische Effekte zu erzielen. Jeder Kontrasttyp hat eine spezifische Wirkung auf die Wahrnehmung des Betrachters und beeinflusst, wie Farben miteinander harmonieren oder sich gegenseitig verstärken. Dieses Konzept wurde von Johannes Itten entwickelt und dient als Grundlage für viele Design- und Kunstprinzipien.</p>
         </div>    
         <img class="sieben-image" src="/img/siebenfarbkontraste.jpg">
     </div>
     
-    <div class="containerPsychologie" >
-        <div section id="a2" class="PsychologieFarben">
+        <div section id="a2" class="text PsychologieFarben">
             <h2> Psychologie von Farben </h2>
             <p class="infopsychologie" >Die Psychologie der Farben untersucht, wie Farben die Emotionen, Wahrnehmungen und das Verhalten von Menschen beeinflussen. Farben haben tief verwurzelte Bedeutungen und können bestimmte Stimmungen hervorrufen. Zum Beispiel:</p>
             <p class="infopsychologie" >Farben werden bewusst in Marketing, Branding und Design eingesetzt, um bestimmte Reaktionen beim Betrachter hervorzurufen und eine gewünschte Atmosphäre zu schaffen.</p>
         </div>
-    </div>
 
     <div section id="b" class="outer-rectangle">
     <h2>Beispiele</h2>
     <div class="container">
+        
         <div class="box">
             <div class="inner-rectangle1"></div>
             <div class="text">
@@ -322,23 +310,8 @@
     </div>
     </div>
 
-<script>
-    docement.addEventListener("scroll", () =>{
-        const siebenFarbkontraste = document.querySelector(".siebenFarbkontraste");
-        const PsychologieFarben = document.querySelector(".PsychologieFarben");
-
-        const scrollPosition = window.scrollY;
-        const viewportHeight = window.innerHeight;
-
-        if (scrollPosition > viewportHeight) {
-            siebenFarbkontraste.classList.add("hidden");
-        } else {
-            siebenFarbkontraste.classList.remove("hidden");
-            PsychologieFarben.classList.remove("hidden");
-        }
-    } )
-</script>
-
+    <script>
+    </script>
 </body>
 
 </html>
