@@ -257,9 +257,12 @@
     }
 
     svg {
-    width: 100vw;
-    height: 100vh;
-  }
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      cursor: pointer;
+    }
+
   </style>
 </head>
 <body>
@@ -413,57 +416,72 @@
     }
   });
 
-const svg = document.querySelector('svg');
-var toggle = true;
+  const svg = document.querySelector('svg');
+    let toggle = true;
 
-// create random hex code
-function RandomColor() {
-  var hex = '0123456789ABCDEF';
-  var color = '#';
-  for (var i = 0; i < 6; i++) {
-    color += hex[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
-
-// add 8 layered circles and squares alternately at click location
-svg.addEventListener('click', (event) => {
-    
-    //toggle between circles and squares
-    if (toggle === true) {
-        for (var i = 0; i < 8; i++) {
-            createCircle(event.clientX, event.clientY);
-        }
-    toggle = false;
-    } else {
-        for (var i = 0; i < 8; i++) {
-            createSquare(event.clientX, event.clientY);
-        }
-        toggle = true; 
+    // Funktion, um eine zufällige Farbe zu erzeugen
+    function getRandomColor() {
+      const chars = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += chars[Math.floor(Math.random() * 16)];
+      }
+      return color;
     }
-});
 
-// create a new circle
-function createCircle(x, y) {
-    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-    circle.setAttribute('cx', x);
-    circle.setAttribute('cy', y);
-    circle.setAttribute('r', 10+Math.random()*100, 0, 2 * Math.PI);
-    circle.setAttribute('fill', RandomColor());        
-    svg.appendChild(circle);
-}
+    // Funktion, um die Komplementärfarbe zu berechnen
+    function getComplementaryColor(color) {
+      // Entfernt das '#' und wandelt die Farbe in eine Zahl um
+      const base10 = parseInt(color.slice(1), 16);
+      // Komplementärfarbe berechnen
+      const complement = 0xFFFFFF ^ base10;
+      // Zurück in hexadezimales Format
+      return `#${complement.toString(16).padStart(6, '0').toUpperCase()}`;
+    }
 
-//create a new square
-function createSquare(x, y) {
-    const square = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    const size = 10+Math.random()*100; //create random size to set width AND height
-    square.setAttribute('x', x - size / 2); //center click location
-    square.setAttribute('y', y - size / 2); //center click location
-    square.setAttribute('height', size);
-    square.setAttribute('width', size);
-    square.setAttribute('fill', RandomColor());        
-    svg.appendChild(square);
-}
+    // Event-Listener für Klicks auf das SVG
+    svg.addEventListener('click', (event) => {
+      // Zufällige Primärfarbe generieren
+      const primaryColor = getRandomColor();
+      const complementaryColor = getComplementaryColor(primaryColor);
+
+      // Toggle zwischen Kreisen und Quadraten
+      if (toggle) {
+        for (let i = 0; i < 8; i++) {
+          createCircle(event.clientX, event.clientY, i % 2 === 0 ? primaryColor : complementaryColor);
+        }
+      } else {
+        for (let i = 0; i < 8; i++) {
+          createSquare(event.clientX, event.clientY, i % 2 === 0 ? primaryColor : complementaryColor);
+        }
+      }
+      toggle = !toggle; // Toggle-Zustand wechseln
+    });
+
+    // Funktion, um einen Kreis zu erstellen
+    function createCircle(x, y, color) {
+      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      const radius = 10 + Math.random() * 50;
+      circle.setAttribute('cx', x);
+      circle.setAttribute('cy', y);
+      circle.setAttribute('r', radius);
+      circle.setAttribute('fill', color);
+      circle.setAttribute('opacity', 0.8); // Transparenz hinzufügen
+      svg.appendChild(circle);
+    }
+
+    // Funktion, um ein Quadrat zu erstellen
+    function createSquare(x, y, color) {
+      const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      const size = 10 + Math.random() * 50;
+      rect.setAttribute('x', x - size / 2);
+      rect.setAttribute('y', y - size / 2);
+      rect.setAttribute('width', size);
+      rect.setAttribute('height', size);
+      rect.setAttribute('fill', color);
+      rect.setAttribute('opacity', 0.8); // Transparenz hinzufügen
+      svg.appendChild(rect);
+    }
   </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farbkontraste mit Buchstaben</title>
+  <title>Farbkontraste</title>
   <style>
     body {
       margin: 0;
@@ -31,7 +31,7 @@
 <body>
   <div class="info">
     <strong>Interaktive Farbkontraste:</strong><br>
-    Klicke auf den Bildschirm, um Buchstaben mit Farb- und Transparenz-Kontrasten zu erzeugen!
+    Klicke auf den Bildschirm, um Farbkontraste zu erzeugen!
   </div>
   <svg></svg>
   <script>
@@ -50,8 +50,11 @@
 
     // Funktion, um die Komplementärfarbe zu berechnen
     function getComplementaryColor(color) {
+      // Entfernt das '#' und wandelt die Farbe in eine Zahl um
       const base10 = parseInt(color.slice(1), 16);
+      // Komplementärfarbe berechnen
       const complement = 0xFFFFFF ^ base10;
+      // Zurück in hexadezimales Format
       return `#${complement.toString(16).padStart(6, '0').toUpperCase()}`;
     }
 
@@ -61,35 +64,42 @@
       const primaryColor = getRandomColor();
       const complementaryColor = getComplementaryColor(primaryColor);
 
-      // Toggle zwischen Farben
+      // Toggle zwischen Kreisen und Quadraten
       if (toggle) {
         for (let i = 0; i < 8; i++) {
-          createLetter(event.clientX, event.clientY, primaryColor, Math.random().toFixed(2));
+          createCircle(event.clientX, event.clientY, i % 2 === 0 ? primaryColor : complementaryColor);
         }
       } else {
         for (let i = 0; i < 8; i++) {
-          createLetter(event.clientX, event.clientY, complementaryColor, Math.random().toFixed(2));
+          createSquare(event.clientX, event.clientY, i % 2 === 0 ? primaryColor : complementaryColor);
         }
       }
       toggle = !toggle; // Toggle-Zustand wechseln
     });
 
-    // Funktion, um einen Buchstaben zu erstellen
-    function createLetter(x, y, color, opacity) {
-      const letter = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-      const randomLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26)); // Zufälliger Buchstabe A-Z
-      const fontSize = 20 + Math.random() * 50; // Zufällige Schriftgröße
+    // Funktion, um einen Kreis zu erstellen
+    function createCircle(x, y, color) {
+      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+      const radius = 10 + Math.random() * 50;
+      circle.setAttribute('cx', x);
+      circle.setAttribute('cy', y);
+      circle.setAttribute('r', radius);
+      circle.setAttribute('fill', color);
+      circle.setAttribute('opacity', 0.8); // Transparenz hinzufügen
+      svg.appendChild(circle);
+    }
 
-      letter.textContent = randomLetter;
-      letter.setAttribute('x', x + (Math.random() * 100 - 50)); // Zufällige Position um den Klickpunkt
-      letter.setAttribute('y', y + (Math.random() * 100 - 50)); // Zufällige Position um den Klickpunkt
-      letter.setAttribute('fill', color);
-      letter.setAttribute('opacity', opacity); // Transparenz-Stufe
-      letter.setAttribute('font-size', fontSize);
-      letter.setAttribute('font-family', 'Arial, sans-serif');
-      letter.setAttribute('font-weight', 'bold'); // Fetter Text für bessere Sichtbarkeit
-
-      svg.appendChild(letter);
+    // Funktion, um ein Quadrat zu erstellen
+    function createSquare(x, y, color) {
+      const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      const size = 10 + Math.random() * 50;
+      rect.setAttribute('x', x - size / 2);
+      rect.setAttribute('y', y - size / 2);
+      rect.setAttribute('width', size);
+      rect.setAttribute('height', size);
+      rect.setAttribute('fill', color);
+      rect.setAttribute('opacity', 0.8); // Transparenz hinzufügen
+      svg.appendChild(rect);
     }
   </script>
 </body>
