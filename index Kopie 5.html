@@ -1,316 +1,96 @@
 <!DOCTYPE html>
-<html lang="de">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OnePager - Farbkontraste</title>
-</head>
-
-<style>
-    body, html {
-        margin: 0; padding: 0;
-        background-color: #d0d7d0;
-        font-size: calc(1vh * 1vw);
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #333;
-      color: white;
-      padding: 1em 0;
-      z-index: 10;
-    }
-    
-    nav ul {
-      list-style: none;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farbkontraste mit Buchstaben</title>
+  <style>
+    body {
       margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
     }
-
-    nav ul li {
-      margin: 0 1em;
-      position: relative;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      padding: 0.5em 1em;
-      border-radius: 0.25em;
-    }
-
-    nav ul li a:hover {
-      background: #555;
-    }
-
-    nav ul li ul {
-      display: none;
-      position: absolute;
-      top: calc(100% + 0.5em);
-      left: 0;
-      background: #333;
-      list-style: none;
-      padding: 0.5em 0;
-      margin: 0;
-      border-radius: 0.25em;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    }
-
-    nav ul li:hover ul {
-      display: block;
-    }
-
-    nav ul li ul li {
-      margin: 0;
-    }
-
-    nav ul li ul li a {
-      display: block;
-      white-space: nowrap;
-      padding: 0.5em 1em;
-    }
-
-    nav ul li ul li a:hover {
-      background: #444;
-    }
-
-    h1 { margin: 4em 0; text-align: center; }
-    h3 { padding-top: 3em; }
-
-    section {
+    svg {
+      width: 100vw;
       height: 100vh;
-      padding: 3em;
-      box-sizing: border-box;
+      display: block;
+      background-color: #f4f4f4;
+      cursor: pointer;
     }
-
-    #a { background: #eee; }
-    #b { background: #ddd; }
-    #c { background: #bbb; }
-
-    .header-image{
-        height: 100vh;
-        width: 100%;
-        object-fit: cover;
+    .info {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-
-    .header {
-        position: absolute;
-        top: 150px;
-        left: 40%;
-        font-size: 30px;
-        color: white;
-    }
-
-    .Ziel {
-        position: flex;
-        margin: 0 auto;
-    }
-
-    .TextZiel {
-        display: flex;
-        flex-direction: column;
-        z-index: 0;
-        margin: auto;
-        color: white;
-        background-color: #6b8ea5;
-        margin: 10vh auto 0;
-        padding: 3vh
-    }
-
-    .infoziel {
-        font-size: 2vh;
-        width: calc(60vw);
-    }
-
-    .text {
-        width: 90%;
-        padding: 10vh;
-        box-sizing: border-box;
-    }
-    
-    .test {
-        display: flex;
-        justify-content: column;
-        align-items: center;
-        padding: 3vh;
-        z-index: 1;
-    }
-
-    .siebenFarbkontraste {
-        flex-direction: column;
-        padding: 3vh;
-        background-color: #f6f7f7;
-        margin: 20vh auto 0;
-        font-size: 2vh; 
-        text-align: left;
-        width: calc( 55vw);
-        z-index: 1;
-    }
-
-    .sieben-image {
-        position: flex;
-        right: 10vh;
-        border: 10px solid white;
-        border-radius: 50%;
-        z-index: 2;
-        margin: 20vh auto 0;
-    }
-    
-    .PsychologieFarben {
-        display: flex;
-        flex-direction: column;
-        z-index: 2;
-        padding: 3vh;
-        background-color: #f6f7f7;
-        margin: 5vh auto 0;
-    }
-
-    .infopsychologie {
-        font-size: 2vh;
-        text-align: left;
-        z-index: 2;
-    }
-
-    .outer-rectangle {
-        width: 90%;
-        height: 60vh;
-        background-color: #6b8ea5;
-        margin: 20vh auto 0;
-        padding: 10px;
-        box-sizing: border-box; /* Sorgt dafür, dass Padding mit berücksichtigt wird */
-        text-align: center;
-    }
-
-    .container {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .box {
-        width: 150vh;
-        height: 150vh;
-        background-color: rgba(255, 255, 255, 0);
-        text-align: center;
-    }
-
-    .inner-rectangle1 {
-        width: 200px;
-        height: 200px;
-        background-color: white;
-    }
-
-    .inner-rectangle2 {
-        width: 200px;
-        height: 200px;
-        background-color: rgb(105, 225, 255);
-    }
-
-    .inner-rectangle3 {
-        width: 200px;
-        height: 200px;
-        background-color: rgb(83, 234, 196);
-    }
-
-    .inner-rectangle4 {
-        width: 200px;
-        height: 200px;
-        background-color: rgb(208, 128, 235);
-    }
-
-</style>
-
+  </style>
+</head>
 <body>
-    
-    <nav>
-        <ul>
-          <li>
-            <a href="#a">Information</a>
-            <ul>
-              <li><a href="#a1">Sieben Farbkontraste</a></li>
-              <li><a href="#a2">Psychologie von Farben</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#b">Beispiele</a>
-          </li>
-          <li>
-            <a href="#c">Section C</a>
-          </li>
-        </ul>
-      </nav>
-    
-    <div class="header">
-        <h1>Farbkontraste</h1>
-    </div>
+  <div class="info">
+    <strong>Interaktive Farbkontraste:</strong><br>
+    Klicke auf den Bildschirm, um Buchstaben mit Farb- und Transparenz-Kontrasten zu erzeugen!
+  </div>
+  <svg></svg>
+  <script>
+    const svg = document.querySelector('svg');
+    let toggle = true;
 
-    <img class="header-image" src="/img/header.jpg"> 
-    
-    <div class="Ziel"></div>
-        <div class="container">
-            <div class="TextZiel">
-                <h2> Ziel </h2>
-                <p class="infoziel" >Das Ziel von Farbkontrasten ist es, visuelle Spannung und Aufmerksamkeit zu erzeugen sowie eine klare Differenzierung zwischen Elementen zu schaffen. Farbkontraste helfen dabei, bestimmte Bereiche hervorzuheben, die Lesbarkeit zu verbessern und emotionale Reaktionen zu wecken. Sie werden genutzt, um Harmonie oder Spannung im Design zu erzeugen, die Wahrnehmung zu steuern und die Benutzererfahrung zu optimieren. Durch den gezielten Einsatz von Farbkontrasten kann ein Design sowohl ästhetisch ansprechend als auch funktional sein.</p>
-            </div>
-        </div>
-    </div>
+    // Funktion, um eine zufällige Farbe zu erzeugen
+    function getRandomColor() {
+      const chars = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += chars[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
 
-    <div section id="a" class="test">
-        <div section id="a1" class="text siebenFarbkontraste">
-            <h2> Sieben Farbkontraste </h2>
-            <p class="infosiebenFarbkontraste" > Das Bild der sieben Farbkontraste veranschaulicht die verschiedenen Arten, wie Farben miteinander in Beziehung stehen und visuelle Spannungen erzeugen können. Es zeigt, wie unterschiedliche Farbkombinationen — wie komplementäre, warme und kalte Farben oder hell-dunkel Kontraste — genutzt werden, um ästhetische Effekte zu erzielen. Jeder Kontrasttyp hat eine spezifische Wirkung auf die Wahrnehmung des Betrachters und beeinflusst, wie Farben miteinander harmonieren oder sich gegenseitig verstärken. Dieses Konzept wurde von Johannes Itten entwickelt und dient als Grundlage für viele Design- und Kunstprinzipien.</p>
-        </div>    
-        <img class="sieben-image" src="/img/siebenfarbkontraste.jpg">
-    </div>
-    
-        <div section id="a2" class="text PsychologieFarben">
-            <h2> Psychologie von Farben </h2>
-            <p class="infopsychologie" >Die Psychologie der Farben untersucht, wie Farben die Emotionen, Wahrnehmungen und das Verhalten von Menschen beeinflussen. Farben haben tief verwurzelte Bedeutungen und können bestimmte Stimmungen hervorrufen. Zum Beispiel:</p>
-            <p class="infopsychologie" >Farben werden bewusst in Marketing, Branding und Design eingesetzt, um bestimmte Reaktionen beim Betrachter hervorzurufen und eine gewünschte Atmosphäre zu schaffen.</p>
-        </div>
+    // Funktion, um die Komplementärfarbe zu berechnen
+    function getComplementaryColor(color) {
+      const base10 = parseInt(color.slice(1), 16);
+      const complement = 0xFFFFFF ^ base10;
+      return `#${complement.toString(16).padStart(6, '0').toUpperCase()}`;
+    }
 
-    <div section id="b" class="outer-rectangle">
-    <h2>Beispiele</h2>
-    <div class="container"> 
-        <div class="box">
-            <div class="inner-rectangle1"></div>
-            <div class="text">
-                <h3>Farbe1</h3>
-                <h4>Bedeutung der Farbe</h4>
-            </div>
-        </div>
-        <div class="box">
-            <div class="inner-rectangle2"></div>
-            <div class="text">
-                <h3>Farbe2</h3>
-                <h4>Bedeutung der Farbe</h4>
-            </div>
-        </div>
-        <div class="box">
-            <div class="inner-rectangle3"></div>
-            <div class="text">
-                <h3>Farbe3</h3>
-                <h4>Bedeutung der Farbe</h4>
-            </div>
-        </div>
-        <div class="box">
-            <div class="inner-rectangle4"></div>
-            <div class="text">
-                <h3>Farbe4</h3>
-                <h4>Bedeutung der Farbe</h4>
-            </div>
-        </div>
-    </div>
-    </div>
+    // Event-Listener für Klicks auf das SVG
+    svg.addEventListener('click', (event) => {
+      // Zufällige Primärfarbe generieren
+      const primaryColor = getRandomColor();
+      const complementaryColor = getComplementaryColor(primaryColor);
 
-    <script>
-    </script>
+      // Toggle zwischen Farben
+      if (toggle) {
+        for (let i = 0; i < 8; i++) {
+          createLetter(event.clientX, event.clientY, primaryColor, Math.random().toFixed(2));
+        }
+      } else {
+        for (let i = 0; i < 8; i++) {
+          createLetter(event.clientX, event.clientY, complementaryColor, Math.random().toFixed(2));
+        }
+      }
+      toggle = !toggle; // Toggle-Zustand wechseln
+    });
+
+    // Funktion, um einen Buchstaben zu erstellen
+    function createLetter(x, y, color, opacity) {
+      const letter = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      const randomLetter = String.fromCharCode(65 + Math.floor(Math.random() * 26)); // Zufälliger Buchstabe A-Z
+      const fontSize = 20 + Math.random() * 50; // Zufällige Schriftgröße
+
+      letter.textContent = randomLetter;
+      letter.setAttribute('x', x + (Math.random() * 100 - 50)); // Zufällige Position um den Klickpunkt
+      letter.setAttribute('y', y + (Math.random() * 100 - 50)); // Zufällige Position um den Klickpunkt
+      letter.setAttribute('fill', color);
+      letter.setAttribute('opacity', opacity); // Transparenz-Stufe
+      letter.setAttribute('font-size', fontSize);
+      letter.setAttribute('font-family', 'Arial, sans-serif');
+      letter.setAttribute('font-weight', 'bold'); // Fetter Text für bessere Sichtbarkeit
+
+      svg.appendChild(letter);
+    }
+  </script>
 </body>
-
 </html>
