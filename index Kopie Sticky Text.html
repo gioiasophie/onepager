@@ -35,7 +35,7 @@
     nav ul li a {
       color: white;
       text-decoration: none;
-      padding: 0.5em 1em;
+      padding: 1em 1em;
       border-radius: 0.25em;
     }
 
@@ -94,14 +94,51 @@
     line-height: 1.6;
   }
 
+  .main-container {
+    display: flex;
+    align-items: center;
+    width: 65%;
+    max-width: 190vh;
+    gap: 60px;
+    margin: 30vh;
+    margin-left: 210px;
+    margin-bottom: 20px;
+  }
+
 
   .header {
-    position: flex;
-    top: 150px;
+    position: relative;
     text-align: center;
     font-size: 5vh;
     margin: 3vh auto 0;
+    color: #252839;
+    -webkit-text-stroke: 0.1v #383d52;
+    text-transform: uppercase;
+    white-space: nowrap;
   }
+  
+  .header::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #1e75c1;
+    -webkit-text-stroke: 0px #383d52;
+    border-right: 2px solid #1e75c1;
+    overflow: hidden;
+    animation: animate 10s linear infinite;
+    }
+
+    @keyframes animate {
+        0%, 10%, 100% {
+            width: 0;
+        }
+        70%, 90% {
+            width: 100%;
+        }
+    }
 
   .Ziel {
     position: flex;
@@ -223,12 +260,12 @@
     }
 
     .box2 {
-        flex: 1 1 200px;
-        min-width: 200px;
-        width: 100vh;
-        height: 50vh;
-        background-color: rgba(255, 255, 255, 0);
-        text-align: left;
+      flex: 1 1 200px;
+      min-width: 200px;
+      width: 100vh;
+      height: 50vh;
+      background-color: rgba(255, 255, 255, 0);
+      text-align: left;
     }
 
     .inner-rectangle5 {
@@ -255,12 +292,40 @@
         background-color: #4DD0E1;
     }
 
-    svg {
-      width: 100vw;
-      height: 100vh;
-      display: block;
-      cursor: pointer;
+    .HellerText {
+      position: flex;
+      padding: 3vh;
+      flex-direction: column;
+      text-align: left;
     }
+    
+    .example1 {
+      color: white;
+      background-color: lightgrey;
+    }
+
+    .example2 {
+      color: black;
+      background-color: lightgrey;
+    }
+ 
+    .Barrierefreiheit {
+      position: flex;
+      padding: 3vh;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .example3 {
+      color: rgb(35, 36, 85);
+      background-color: rgb(186, 55, 55);
+    }
+
+    .example4 {
+      color: rgb(35, 36, 85);
+      background-color: #ffffff;
+    }
+
 
   </style>
 </head>
@@ -276,16 +341,17 @@
         <ul>
           <li><a href="#b1">Sieben Farbkontraste</a></li>
           <li><a href="#b2">Psychologie von Farben</a></li>
+          <li><a href="#b3">Beispiele</a></li>
         </ul>
       </li>
       <li>
-        <a href="#c">Beispiele</a>
+        <a href="#c">Farbkontraste im Web</a>
       </li>
     </ul>
   </nav>
 
-  <div class="header">
-    <h1>Farbkontraste</h1>
+  <div class="main-container">
+    <h1 data-text="Farbkontraste" class="header">Farbkontraste</h1>
   </div>
 
   <div section id="a" class="Ziel">
@@ -306,7 +372,7 @@
     </div>
   </div>
 
-  <div section id="c" class="outer-rectangle">
+  <div section id="b3" class="outer-rectangle">
     <h1>Beispiele</h1>
     <h2>Beruhigende Farbpalette</h2>
     <p>Diese Farben vermitteln Ruhe, Frieden und Gelassenheit. Perfekt für Inhalte, die eine entspannte Atmosphäre schaffen sollen.</p>
@@ -356,7 +422,7 @@
               <p>Kreativität, Energie, Verspieltheit</p>
           </div>
         </div>
-        <div class="box">
+        <div class="box2">
           <div class="inner-rectangle6"></div>
           <div class="text">
               <h3>Violett</h3>
@@ -364,7 +430,7 @@
               <p>Originalität, Inspiration, Fantasie</p>
           </div>
         </div>
-        <div class="box">
+        <div class="box2">
           <div class="inner-rectangle7"></div>
           <div class="text">
               <h3>Hellorange</h3>
@@ -372,7 +438,7 @@
               <p>Freundlichkeit, Freude, Begeisterung</p>
           </div>
         </div>
-        <div class="box">
+        <div class="box2">
           <div class="inner-rectangle8"></div>
           <div class="text">
               <h3>Aqua</h3>
@@ -380,8 +446,33 @@
               <p>Frische, Modernität, Offeneheit</p>
           </div>
         </div>
-    <h1>Spiele mit Farbkontrasten indem du unten auf den Bildschirm klickst!</h1>
-    </div>
+
+    <div section id="c" class="Farbkontraste im Web">
+      <h1>Warum Farbkontraste im Web wichtig sind</h1>
+      <p>Farbkontraste spielen eine entscheidende Rolle für die Benutzerfreundlichkeit und Barrierefreiheit von Websites. Ein ausreichender Kontrast zwischen Text und Hintergrund sorgt dafür, dass Inhalte für alle Nutzer gut lesbar sind, einschließlich Menschen mit Sehbehinderungen, wie Farbsehschwächen oder altersbedingten Einschränkungen.</p>
+      <h2>Beispiele:</h2>
+      <div class="text HellerText">
+        <h3>Heller Text auf hellem Hintergrund</h3>
+        <p>Weißer Text auf einem hellgrauen Hintergrund ist schwer zu lesen. Stattdessen könnte man schwarzen oder dunkelgrauen Text verwenden, um den Kontrast zu erhöhen.</p>
+        <div class="example1">
+          <h3>White text on a light grey background is difficult to read;</h3>
+        </div>
+        <div class="example2">
+          <h3>using dark text instead creates better contrast and improves readability.</h3>
+        </div>
+      </div>
+      <div class="text Barrierefreiheit">
+        <h3>Barrierefreiheit</h3>
+        <p>Ein blauer Text auf rotem Hintergrund mag ästhetisch interessant wirken, ist jedoch für Personen mit Rot-Grün-Sehschwäche kaum unterscheidbar. Eine Alternative wäre dunkelblauer Text auf einem weißen Hintergrund.</p>
+        <div class="example3">
+          <h3>Blue text on a red background may look appealing but is hard to distinguish for those with red-green color blindness;</h3>
+        </div>
+        <div class="example4">
+          <h3>dark blue on white is a better alternative.</h3>
+        </div>
+      </div>
+
+  
     </div>
 
     
@@ -415,72 +506,6 @@
     }
   });
 
-  const svg = document.querySelector('svg');
-    let toggle = true;
-
-    // Funktion, um eine zufällige Farbe zu erzeugen
-    function getRandomColor() {
-      const chars = '0123456789ABCDEF';
-      let color = '#';
-      for (let i = 0; i < 6; i++) {
-        color += chars[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    }
-
-    // Funktion, um die Komplementärfarbe zu berechnen
-    function getComplementaryColor(color) {
-      // Entfernt das '#' und wandelt die Farbe in eine Zahl um
-      const base10 = parseInt(color.slice(1), 16);
-      // Komplementärfarbe berechnen
-      const complement = 0xFFFFFF ^ base10;
-      // Zurück in hexadezimales Format
-      return `#${complement.toString(16).padStart(6, '0').toUpperCase()}`;
-    }
-
-    // Event-Listener für Klicks auf das SVG
-    svg.addEventListener('click', (event) => {
-      // Zufällige Primärfarbe generieren
-      const primaryColor = getRandomColor();
-      const complementaryColor = getComplementaryColor(primaryColor);
-
-      // Toggle zwischen Kreisen und Quadraten
-      if (toggle) {
-        for (let i = 0; i < 8; i++) {
-          createCircle(event.clientX, event.clientY, i % 2 === 0 ? primaryColor : complementaryColor);
-        }
-      } else {
-        for (let i = 0; i < 8; i++) {
-          createSquare(event.clientX, event.clientY, i % 2 === 0 ? primaryColor : complementaryColor);
-        }
-      }
-      toggle = !toggle; // Toggle-Zustand wechseln
-    });
-
-    // Funktion, um einen Kreis zu erstellen
-    function createCircle(x, y, color) {
-      const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-      const radius = 10 + Math.random() * 50;
-      circle.setAttribute('cx', x);
-      circle.setAttribute('cy', y);
-      circle.setAttribute('r', radius);
-      circle.setAttribute('fill', color);
-      circle.setAttribute('opacity', 0.8); // Transparenz hinzufügen
-      svg.appendChild(circle);
-    }
-
-    // Funktion, um ein Quadrat zu erstellen
-    function createSquare(x, y, color) {
-      const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-      const size = 10 + Math.random() * 50;
-      rect.setAttribute('x', x - size / 2);
-      rect.setAttribute('y', y - size / 2);
-      rect.setAttribute('width', size);
-      rect.setAttribute('height', size);
-      rect.setAttribute('fill', color);
-      rect.setAttribute('opacity', 0.8); // Transparenz hinzufügen
-      svg.appendChild(rect);
-    }
   </script>
 </body>
 </html>
