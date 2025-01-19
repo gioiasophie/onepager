@@ -6,19 +6,8 @@
   <title>Scroll-Effekt</title>
 
   <style>
-  /* Standardfarben (Light Mode) */
-  :root {
-      --background-color: white;
-      --text-color: black;
-    }
-
-    /* Dark Mode Farben */
-    .dark-mode {
-      --background-color: #121212;
-      --text-color: #ffffff;
-     --special-background: rgb(33, 33, 33); 
-    }
-
+  /* Grundlegendes Styling */
+  
   nav {
       position: fixed;
       top: 0;
@@ -98,31 +87,12 @@
     #b { background: #dddddd00; }
   
   body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: Arial, sans-serif;
-    transition: background-color 0.3s, color 0.3s;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    font-family: Arial, sans-serif;
     overflow-x: hidden;
     line-height: 1.6;
   }
-
-  button {
-      margin: 10vh;
-      padding: 10px 20px;
-      cursor: pointer;
-      border: none;
-      background-color: var(--text-color);
-      color: var(--background-color);
-      border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
 
   .main-container {
     display: flex;
@@ -194,7 +164,7 @@
   .fixed-text {
     position: sticky;
     top: 0;
-    background-color: #f8f9fa(--background-color);
+    background-color: #f8f9fa;
     z-index: 1;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: position 0.3s ease, top 0.3s ease;
@@ -212,16 +182,12 @@
   /* Styling für den scrollenden Text */
   .scroll-text {
     position: relative;
-    background-color: white;
+    background-color: #fff;
     z-index: 2;
     margin-top: 20px; /* Platzhalter, damit der fixierte Text sichtbar bleibt */
     margin-bottom: 5px;
     }
 
-    .dark-mode .scroll-text {
-      background-color: var(--special-background);
-    }
-  
   .outer-rectangle {
         width: 90%;
         height: 60vh;
@@ -286,7 +252,7 @@
     }
     
   .container2 {
-       display: flex;
+        display: flex;
         flex-wrap: wrap;
         gap: 10px;
         justify-content: space-around;
@@ -383,8 +349,6 @@
       </li>
     </ul>
   </nav>
-
-  <button id="darkModeToggle">Dark Mode</button>
 
   <div class="main-container">
     <h1 data-text="Farbkontraste" class="header">Farbkontraste</h1>
@@ -516,18 +480,6 @@
     <svg xmlns="http://www.w3.org/2000/svg"></svg>
 
   <script>
-
-
-     // Button auswählen
-     const toggleButton = document.getElementById('darkModeToggle');
-
-    // Event Listener für das Umschalten
-      toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-
-    
-
   document.addEventListener("scroll", () => {
     const fixedText = document.querySelector(".fixed-text");
     const scrollText = document.querySelector(".scroll-text");
