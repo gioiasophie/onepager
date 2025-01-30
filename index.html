@@ -7,6 +7,13 @@
 
   <style>
   /* Standardfarben (Light Mode) */
+  @media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 10px;
+    }
+  }
+  
   :root {
       --background-color: white;
       --text-color: black;
@@ -177,6 +184,7 @@
     position: flex;
     margin: 10vh auto 0;
     padding: 3vh;
+    top:0;
   }
 
   .container {
@@ -199,6 +207,7 @@
     z-index: 1;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: position 0.3s ease, top 0.3s ease;
+    max-width: 150vh;
   }
 
   .containerSevenColor {
@@ -226,6 +235,7 @@
     margin-top: 20px; /* Platzhalter, damit der fixierte Text sichtbar bleibt */
     margin-bottom: 5px;
     max-width: 150vh;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .dark-mode .scroll-text {
@@ -241,6 +251,7 @@
         box-sizing: border-box; /* Sorgt dafür, dass Padding mit berücksichtigt wird */
         text-align: center;
         margin-bottom: 30vh;
+        max-width: 150vh;
     }
   
   .container1 {
@@ -310,6 +321,7 @@
         box-sizing: border-box; /* Sorgt dafür, dass Padding mit berücksichtigt wird */
         text-align: center;
         margin-bottom: 30vh;
+        max-width: 150vh;
     }
     
   .container2 {
@@ -353,6 +365,34 @@
         background-color: #4DD0E1;
     }
 
+    .inner-rectangle5:hover {
+      opacity: 1;
+      transform: scale(1.07);
+    }
+    .inner-rectangle6:hover {
+      opacity: 1;
+      transform: scale(1.07);
+    }
+    .inner-rectangle7:hover {
+      opacity: 1;
+      transform: scale(1.07);
+    }
+    .inner-rectangle8:hover {
+      opacity: 1;
+      transform: scale(1.07);
+    }
+
+    .FarbkontrasteimWeb {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      max-width: 150vh;
+      margin: 10vh auto 0;
+      padding: 3vh;
+    top:0;
+    }
+    .containerWhy{
+      max-width: 150vh;
+    }
+
     .HellerText {
       position: flex;
       padding: 3vh;
@@ -377,6 +417,7 @@
       padding: 3vh;
       flex-direction: column;
       text-align: left;
+      margin-bottom: 20vh;
     }
 
     .example3 {
@@ -392,6 +433,17 @@
       background-color: #ffffff;
       padding: 1vh;
     }
+
+    footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 2;
+        }
 
 
   </style>
@@ -525,9 +577,11 @@
           </div>
         </div>
 
-    <div section id="c" class="Farbkontraste im Web">
-      <h1>Why color contrasts on the web are important</h1>
-      <p>Color contrasts play a crucial role in the usability and accessibility of websites. Sufficient contrast between text and background ensures that content is easy to read for all users, including people with visual impairments such as color vision deficiencies or age-related limitations.</p>
+    <div section id="c" class="FarbkontrasteimWeb">
+      <div class="containerWhy">
+        <h1>Why color contrasts on the web are important</h1>
+        <p>Color contrasts play a crucial role in the usability and accessibility of websites. Sufficient contrast between text and background ensures that content is easy to read for all users, including people with visual impairments such as color vision deficiencies or age-related limitations.</p>
+      </div>
       <h2>Examples:</h2>
       <div class="text HellerText">
         <h3>Light text on a light background</h3>
@@ -545,16 +599,17 @@
   
     </div>
 
-    
-    
-    <svg xmlns="http://www.w3.org/2000/svg"></svg>
-
   <script>
 
 
      // Button auswählen
      const toggleButton = document.getElementById('darkModeToggle');
+     const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+    // Falls System-Dunkelmodus aktiv ist, setzen
+    if (prefersDarkMode) {
+      document.body.classList.add("dark-mode");
+    }
     // Event Listener für das Umschalten
       toggleButton.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
@@ -589,5 +644,11 @@
   });
 
   </script>
+
+<footer>
+  &copy; This page was created by Gioia Deselaers during the winter term 2024/25 in the Interactive Information course of the Interface Design program at the University of Applied Sciences Potsdam. </a>
+  <p>The image of the color wheel was created by Johannes Itten (1961)</p>
+</footer>
+
 </body>
 </html>
