@@ -169,14 +169,12 @@
         }
     }
 
-  .containerZiel{
-    max-width: 150vh;
-  }
-
   .Ziel {
     position: flex;
     margin: 10vh auto 0;
     padding: 3vh;
+    flex-direction: column;
+    background-color: #6b8ea5;
   }
 
   .container {
@@ -201,16 +199,8 @@
     transition: position 0.3s ease, top 0.3s ease;
   }
 
-  .containerSevenColor {
-    display: flex;
-    align-items: center;
-    max-width: 150vh;
-  }
-
   .sieben-image {
         position: flex;
-        width: 30vh;
-        height: 30vh;
         right: 10vh;
         border: 10px solid white;
         border-radius: 50%;
@@ -225,7 +215,6 @@
     z-index: 2;
     margin-top: 20px; /* Platzhalter, damit der fixierte Text sichtbar bleibt */
     margin-bottom: 5px;
-    max-width: 150vh;
     }
 
     .dark-mode .scroll-text {
@@ -282,23 +271,6 @@
         width: 200px;
         height: 200px;
         background-color: #D9BBFF;
-    }
-
-    .inner-rectangle1:hover {
-      opacity: 1;
-      transform: scale(1.07);
-    }
-    .inner-rectangle2:hover {
-      opacity: 1;
-      transform: scale(1.07);
-    }
-    .inner-rectangle3:hover {
-      opacity: 1;
-      transform: scale(1.07);
-    }
-    .inner-rectangle4:hover {
-      opacity: 1;
-      transform: scale(1.07);
     }
   
     .outer-rectangle2 {
@@ -363,15 +335,13 @@
     .example1 {
       color: white;
       background-color: lightgrey;
-      padding: 2vh;
     }
 
-    .example1:hover::after{
-      content: "using dark text instead creates better contrast and improves readability.";
-      font-weight: bold;
+    .example2 {
       color: black;
+      background-color: lightgrey;
     }
-
+ 
     .Barrierefreiheit {
       position: flex;
       padding: 3vh;
@@ -382,15 +352,11 @@
     .example3 {
       color: rgb(35, 36, 85);
       background-color: rgb(186, 55, 55);
-      padding: 2vh;
     }
 
-    .example3:hover::after{
-      content: "dark blue on white is a better alternative.";
-      font-weight: bold;
+    .example4 {
       color: rgb(35, 36, 85);
       background-color: #ffffff;
-      padding: 1vh;
     }
 
 
@@ -426,22 +392,16 @@
     <h1 data-text="Color Contrasts" class="header">Color Contrasts</h1>
   </div>
 
-  <div class="containerZiel">
-    <div section id="a" class="Ziel">
-      <h1>Goal</h1>
-      <p>The aim of color contrasts is to create visual tension and attention as well as a clear differentiation between elements. Color contrasts help to highlight certain areas, improve readability and evoke emotional responses. They are used to create harmony or tension in the design, control perception and optimize the user experience. Through the targeted use of color contrasts, a design can be both aesthetically pleasing and functional.</p>
-    </div>
+  <div section id="a" class="Ziel">
+    <h1>Goal</h1>
+    <p>The aim of color contrasts is to create visual tension and attention as well as a clear differentiation between elements. Color contrasts help to highlight certain areas, improve readability and evoke emotional responses. They are used to create harmony or tension in the design, control perception and optimize the user experience. Through the targeted use of color contrasts, a design can be both aesthetically pleasing and functional.</p>
   </div>
-  
+
   <div section id="b" class="container">
     <div section id="b1" class="text fixed-text">
-      <div class="containerSevenColor">
-        <div class="containerText">
-          <h1>Seven color contrasts</h1>
-          <p>The image of the seven color contrasts illustrates the different ways in which colors can relate to each other and create visual tension. It shows how different color combinations - such as complementary, warm and cold colors or light-dark contrasts - are used to create aesthetic effects. Each type of contrast has a specific effect on the viewer's perception and influences how colors harmonize or reinforce each other. This concept was developed by Johannes Itten and serves as the basis for many design and art principles.</p>
-        </div>
-          <img class="sieben-image" src="img/siebenfarbkontraste.jpg">
-      </div>
+      <h1>Seven color contrasts</h1>
+      <p>The image of the seven color contrasts illustrates the different ways in which colors can relate to each other and create visual tension. It shows how different color combinations - such as complementary, warm and cold colors or light-dark contrasts - are used to create aesthetic effects. Each type of contrast has a specific effect on the viewer's perception and influences how colors harmonize or reinforce each other. This concept was developed by Johannes Itten and serves as the basis for many design and art principles.</p>
+      <img class="sieben-image" src="img/siebenfarbkontraste.jpg">
     </div>
     <div section id="b2" class="text scroll-text">
       <h1>Psychology of colors</h1>
@@ -534,11 +494,17 @@
         <div class="example1">
           <h3>White text on a light grey background is difficult to read;</h3>
         </div>
+        <div class="example2">
+          <h3>using dark text instead creates better contrast and improves readability.</h3>
+        </div>
       </div>
       <div class="text Barrierefreiheit">
         <h3>Accessibility</h3>
         <div class="example3">
           <h3>Blue text on a red background may look appealing but is hard to distinguish for those with red-green color blindness;</h3>
+        </div>
+        <div class="example4">
+          <h3>dark blue on white is a better alternative.</h3>
         </div>
       </div>
 
