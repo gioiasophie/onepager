@@ -116,7 +116,6 @@
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
-    overflow: hidden;
     line-height: 1.6;
   }
 
@@ -438,16 +437,6 @@
       padding: 1vh;
     }
 
-    .trail {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background-color: white;
-    border-radius: 50%;
-    pointer-events: none;
-    opacity: 0.7;
-}
-
     footer {
             background-color: #333;
             color: white;
@@ -665,39 +654,6 @@
       fixedText.style.top = "0";
     }
   });
-
-const numCircles = 10; // Anzahl der Kreise
-const circles = [];
-
-for (let i = 0; i < numCircles; i++) {
-    let circle = document.createElement("div");
-    circle.classList.add("trail");
-    document.body.appendChild(circle);
-    circles.push(circle);
-}
-
-let mouseX = 0, mouseY = 0;
-document.addEventListener("mousemove", (event) => {
-    mouseX = event.clientX;
-    mouseY = event.clientY;
-});
-
-function animateCircles() {
-    let x = mouseX;
-    let y = mouseY;
-
-    circles.forEach((circle, index) => {
-        setTimeout(() => {
-            circle.style.transform = `translate(${x - 7}px, ${y - 7}px)`;
-        }, index * 50);
-        x *= 0.98; // Verkleinerungseffekt
-        y *= 0.98;
-    });
-
-    requestAnimationFrame(animateCircles);
-}
-
-animateCircles();
 
   </script>
 
