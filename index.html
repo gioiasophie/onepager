@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,7 +96,7 @@
     h3 { padding-top: 3em; }
 
     section {
-      height: 100vh;
+      height: 10vh;
       padding: 3em;
       box-sizing: border-box;
     }
@@ -116,6 +116,7 @@
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
+    overflow: hidden;
     line-height: 1.6;
   }
 
@@ -148,7 +149,7 @@
     font-size: 5vh;
     margin: 3vh auto 0;
     color: #252839;
-    -webkit-text-stroke: 0.1v #383d52;
+    
     text-transform: uppercase;
     white-space: nowrap;
   }
@@ -177,11 +178,10 @@
     }
 
   .containerZiel{
-    max-width: 150vh;
+    max-width: 100vh;
   }
 
   .Ziel {
-    position: flex;
     margin: 10vh auto 0;
     padding: 3vh;
     top:0;
@@ -189,42 +189,42 @@
 
   .container {
     position: relative;
-    background-color: #f1f1f1;
+    background-color: #ffffff;
   }
 
   /* Styling für beide Textbereiche */
   .text {
     width: 100%;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
   }
 
   /* Styling für den fixierten Text */
   .fixed-text {
     position: sticky;
-    top: 0;
     background-color: #f8f9fa(--background-color);
     z-index: 1;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: position 0.3s ease, top 0.3s ease;
-    max-width: 150vh;
+    max-width: 100vh;
+
   }
 
   .containerSevenColor {
     display: flex;
     align-items: center;
-    max-width: 150vh;
+    max-width: 100vh;
+    top: 0vh;
   }
 
   .sieben-image {
-        position: flex;
         width: 30vh;
         height: 30vh;
         right: 10vh;
         border: 10px solid white;
         border-radius: 50%;
         z-index: 2;
-        margin: 10vh auto 0;
+        top: 0vh;
     }
   .sieben-image:hover{
     opacity: 1;
@@ -238,7 +238,7 @@
     z-index: 2;
     margin-top: 20px; /* Platzhalter, damit der fixierte Text sichtbar bleibt */
     margin-bottom: 5px;
-    max-width: 150vh;
+    max-width: 100vh;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
@@ -255,7 +255,7 @@
         box-sizing: border-box; /* Sorgt dafür, dass Padding mit berücksichtigt wird */
         text-align: center;
         margin-bottom: 30vh;
-        max-width: 150vh;
+        max-width: 100vh;
     }
   
   .container1 {
@@ -320,12 +320,12 @@
         width: 90%;
         height: 60vh;
         background-color: #eef0f200;
-        margin: 2vh auto 0;
+        margin: 10vh auto 0;
         padding: 10px;
         box-sizing: border-box; /* Sorgt dafür, dass Padding mit berücksichtigt wird */
         text-align: center;
         margin-bottom: 30vh;
-        max-width: 150vh;
+        max-width: 100vh;
     }
     
   .container2 {
@@ -388,17 +388,17 @@
 
     .FarbkontrasteimWeb {
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      max-width: 150vh;
+      max-width: 100vh;
       margin: 10vh auto 0;
       padding: 3vh;
     top:0;
     }
     .containerWhy{
-      max-width: 150vh;
+      max-width: 100vh;
     }
 
     .HellerText {
-      position: flex;
+      position: relative;
       padding: 3vh;
       flex-direction: column;
       text-align: left;
@@ -417,7 +417,7 @@
     }
 
     .Barrierefreiheit {
-      position: flex;
+      position: relative;
       padding: 3vh;
       flex-direction: column;
       text-align: left;
@@ -437,6 +437,16 @@
       background-color: #ffffff;
       padding: 1vh;
     }
+
+    .trail {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.7;
+}
 
     footer {
             background-color: #333;
@@ -489,8 +499,10 @@
     </div>
   </div>
   
-  <div section id="b" class="container">
-    <div section id="b1" class="text fixed-text">
+  <section id="b"> </section>
+  <div class="container">
+  <section id="b1"></section>
+    <div class="text fixed-text">
       <div class="containerSevenColor">
         <div class="containerText">
           <h1>Seven color contrasts</h1>
@@ -499,14 +511,16 @@
           <img class="sieben-image" src="img/siebenfarbkontraste.jpg">
       </div>
     </div>
-    <div section id="b2" class="text scroll-text">
+    <section id="b2"></section>
+    <div class="text scroll-text">
       <h1>Psychology of colors</h1>
       <p>The psychology of color studies how colors influence people's emotions, perceptions and behavior. Colors have deep-rooted meanings and can evoke certain moods. For example:</p>
       <p>Colors are deliberately used in marketing, branding and design to evoke certain reactions in the viewer and create a desired atmosphere.</p>
     </div>
   </div>
 
-  <div section id="b3" class="outer-rectangle">
+  <section id="b3"></section>
+  <div class="outer-rectangle">
     <h1>Examples</h1>
     <h2>Calming color palette</h2>
     <p>These colors convey calm, peace and serenity. Perfect for content that is intended to create a relaxed atmosphere.</p>
@@ -543,6 +557,8 @@
                 <p>Balance, creativity, harmony</p>
             </div>
         </div>
+      </div>
+    </div>
   
   <div class="outer-rectangle2">
     <h2>Playful and creative color palette</h2>
@@ -580,7 +596,10 @@
               <p>Frische, Modernität, Offeneheit</p>
           </div>
         </div>
+      </div>
+    </div>
 
+    <section id="c"></section>
     <div section id="c" class="FarbkontrasteimWeb">
       <div class="containerWhy">
         <h1>Why color contrasts on the web are important</h1>
@@ -647,10 +666,43 @@
     }
   });
 
+const numCircles = 10; // Anzahl der Kreise
+const circles = [];
+
+for (let i = 0; i < numCircles; i++) {
+    let circle = document.createElement("div");
+    circle.classList.add("trail");
+    document.body.appendChild(circle);
+    circles.push(circle);
+}
+
+let mouseX = 0, mouseY = 0;
+document.addEventListener("mousemove", (event) => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+});
+
+function animateCircles() {
+    let x = mouseX;
+    let y = mouseY;
+
+    circles.forEach((circle, index) => {
+        setTimeout(() => {
+            circle.style.transform = `translate(${x - 7}px, ${y - 7}px)`;
+        }, index * 50);
+        x *= 0.98; // Verkleinerungseffekt
+        y *= 0.98;
+    });
+
+    requestAnimationFrame(animateCircles);
+}
+
+animateCircles();
+
   </script>
 
 <footer>
-  &copy; This page was created by Gioia Deselaers during the winter term 2024/25 in the Interactive Information course of the Interface Design program at the University of Applied Sciences Potsdam. </a>
+  <a>&copy; This page was created by Gioia Deselaers during the winter term 2024/25 in the Interactive Information course of the Interface Design program at the University of Applied Sciences Potsdam.</a>
   <p>The image of the color wheel was created by Johannes Itten (1961)</p>
 </footer>
 
